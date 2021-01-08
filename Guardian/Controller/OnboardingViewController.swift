@@ -24,7 +24,7 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var masukBtn: UIButton!
     @IBOutlet weak var daftarBtn: UIButton!
     
-    private let slides = Slide.collection
+    private let slides: [Slide] = Slide.collection
     
     
     override func viewDidLoad() {
@@ -43,6 +43,12 @@ class OnboardingViewController: UIViewController, UIScrollViewDelegate {
         collectionView.contentInsetAdjustmentBehavior = .never
         collectionView.isPagingEnabled = true
         collectionView.backgroundColor = .clear
+        
+        daftarBtn.layer.shadowColor = UIColor.black.cgColor
+        daftarBtn.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
+        daftarBtn.layer.shadowRadius = 2
+        daftarBtn.layer.shadowOpacity = 0.2
+        daftarBtn.layer.masksToBounds = false
     }
     
     private func setupPageControl() {
@@ -99,4 +105,3 @@ class OnboardingCollectionViewCell: UICollectionViewCell {
     }
     
 }
-
