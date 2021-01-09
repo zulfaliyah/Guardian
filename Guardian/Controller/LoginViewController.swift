@@ -9,9 +9,13 @@ import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
+    @IBOutlet weak var usernameTF: FloatingLabel!
+    @IBOutlet weak var passwordTF: FloatingLabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.hideKeyboardOnTapAround()
+        
     }
 
     func hideKeyboardOnTapAround() {
@@ -24,4 +28,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
+    @IBAction func masukBtn(_ sender: Any) {
+        
+        API().login()
+        
+    }
 }
+
+

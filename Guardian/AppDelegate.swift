@@ -14,18 +14,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var hasAlreadyLaunched :Bool!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        hasAlreadyLaunched = UserDefaults.standard.bool(forKey: "hasAlreadyLaunched")
-        if (hasAlreadyLaunched) {
-            hasAlreadyLaunched = true
-        }else{
-            UserDefaults.standard.set(true, forKey: "hasAlreadyLaunched")
-        }
+//        hasAlreadyLaunched = UserDefaults.standard.bool(forKey: "hasAlreadyLaunched")
+//        if (hasAlreadyLaunched) {
+//            hasAlreadyLaunched = true
+//        }else{
+//            UserDefaults.standard.set(true, forKey: "hasAlreadyLaunched")
+//        }
         return true
     }
     
-    func sethasAlreadyLaunched(){
-        hasAlreadyLaunched = true
-    }
+//    func sethasAlreadyLaunched(){
+//        hasAlreadyLaunched = true
+//    }
     // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
