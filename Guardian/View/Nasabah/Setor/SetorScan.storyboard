@@ -8,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Pindai untuk setor-->
+        <!--Setor Scan View Controller-->
         <scene sceneID="b3O-BI-YWF">
             <objects>
                 <viewController storyboardIdentifier="SetorScan" modalPresentationStyle="fullScreen" id="fNB-Tn-WuN" customClass="SetorScanViewController" customModule="Guardian" customModuleProvider="target" sceneMemberID="viewController">
@@ -26,14 +26,14 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04Q-Yp-rau">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04Q-Yp-rau">
                                 <rect key="frame" x="19" y="57" width="40" height="32"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="4gx-cz-Ffp"/>
+                                    <constraint firstAttribute="height" constant="32" id="4gx-cz-Ffp"/>
                                 </constraints>
                                 <state key="normal" image="chevron"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pindai QR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8N-Z6-RFT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pindai QR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8N-Z6-RFT">
                                 <rect key="frame" x="156" y="58" width="108" height="29"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -55,15 +55,15 @@
                         <viewLayoutGuide key="safeArea" id="teu-ly-ZVO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="teu-ly-ZVO" firstAttribute="trailing" secondItem="e8N-Z6-RFT" secondAttribute="trailing" constant="148" id="2Xp-8L-pnh"/>
+                            <constraint firstItem="teu-ly-ZVO" firstAttribute="trailing" secondItem="e8N-Z6-RFT" secondAttribute="trailing" constant="150" id="2Xp-8L-pnh"/>
                             <constraint firstItem="C7A-f3-lbZ" firstAttribute="top" secondItem="tFk-Ck-0MO" secondAttribute="bottom" constant="5" id="2nL-fJ-L4M"/>
                             <constraint firstItem="dHA-eA-Ep1" firstAttribute="centerY" secondItem="HXh-Mt-DgU" secondAttribute="centerY" constant="-5" id="5k9-3z-f8B"/>
                             <constraint firstItem="tFk-Ck-0MO" firstAttribute="centerX" secondItem="C7A-f3-lbZ" secondAttribute="centerX" id="BU6-NP-8kL"/>
                             <constraint firstItem="tFk-Ck-0MO" firstAttribute="leading" secondItem="teu-ly-ZVO" secondAttribute="leading" constant="39" id="GTT-vm-Qpl"/>
-                            <constraint firstItem="teu-ly-ZVO" firstAttribute="trailing" secondItem="04Q-Yp-rau" secondAttribute="trailing" constant="351" id="GTx-TJ-YkF"/>
-                            <constraint firstItem="e8N-Z6-RFT" firstAttribute="leading" secondItem="HXh-Mt-DgU" secondAttribute="leading" constant="158" id="OjQ-7c-w3m"/>
+                            <constraint firstItem="teu-ly-ZVO" firstAttribute="trailing" secondItem="04Q-Yp-rau" secondAttribute="trailing" constant="355" id="GTx-TJ-YkF"/>
+                            <constraint firstItem="e8N-Z6-RFT" firstAttribute="leading" secondItem="HXh-Mt-DgU" secondAttribute="leading" constant="156" id="OjQ-7c-w3m"/>
                             <constraint firstItem="04Q-Yp-rau" firstAttribute="leading" secondItem="teu-ly-ZVO" secondAttribute="leading" constant="19" id="R7h-Qi-4O2"/>
-                            <constraint firstItem="04Q-Yp-rau" firstAttribute="top" secondItem="teu-ly-ZVO" secondAttribute="top" constant="9" id="STg-I1-nd6"/>
+                            <constraint firstItem="04Q-Yp-rau" firstAttribute="top" secondItem="teu-ly-ZVO" secondAttribute="top" constant="13" id="STg-I1-nd6"/>
                             <constraint firstItem="dHA-eA-Ep1" firstAttribute="top" secondItem="HXh-Mt-DgU" secondAttribute="topMargin" constant="-54" id="SXr-Ng-j2W"/>
                             <constraint firstItem="tFk-Ck-0MO" firstAttribute="centerX" secondItem="HXh-Mt-DgU" secondAttribute="centerX" id="b7V-XC-7H6"/>
                             <constraint firstItem="teu-ly-ZVO" firstAttribute="bottom" secondItem="tFk-Ck-0MO" secondAttribute="bottom" constant="340" id="f21-oC-RR2"/>
@@ -73,9 +73,6 @@
                             <constraint firstItem="e8N-Z6-RFT" firstAttribute="top" secondItem="teu-ly-ZVO" secondAttribute="top" constant="14" id="syb-yf-H19"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Pindai untuk setor" leftItemsSupplementBackButton="YES" largeTitleDisplayMode="never" id="YsE-Ae-TEX">
-                        <barButtonItem key="backBarButtonItem" title="Kembali" id="4fe-s0-szf"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="qrScannerView" destination="dHA-eA-Ep1" id="4az-jj-aho"/>
                     </connections>

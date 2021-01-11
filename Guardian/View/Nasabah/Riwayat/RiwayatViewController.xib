@@ -66,7 +66,7 @@
                                 <action selector="segAction:" destination="-1" eventType="valueChanged" id="3yu-lb-auG"/>
                             </connections>
                         </segmentedControl>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="v5w-6k-hJ6">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="v5w-6k-hJ6">
                             <rect key="frame" x="20" y="68" width="334" height="419"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </tableView>
@@ -116,7 +116,7 @@
             <color red="0.29800000786781311" green="0.29800000786781311" blue="0.29800000786781311" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <namedColor name="OrangeMuda">
-            <color red="0.99198299649999999" green="0.96513921020000004" blue="0.94117194410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <color red="0.99199998378753662" green="0.9649999737739563" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

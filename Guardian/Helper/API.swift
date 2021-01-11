@@ -78,13 +78,12 @@ class API: UIViewController {
         print (headers)
 
         AF.request("http://192.168.1.3:3000/api/v1/machine/scan", method: .post, parameters: parameter, encoding: URLEncoding.default, headers: headers)
-            .responseJSON { [self] response in
+            .responseJSON { response in
                 if let value = response.value {
                     let json = JSON(value)
                     let success = json["success"].boolValue
                     if success {
                         print (json)
-                        //move(name: "AdminMain", identifier: "AdminMain")
                     } else {
                         let message = json["errorMessage"].stringValue
                         print (message)

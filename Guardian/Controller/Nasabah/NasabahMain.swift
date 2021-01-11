@@ -101,7 +101,7 @@ class NasabahMain: UIViewController {
     var riwayatViewController: RiwayatViewController!
     var visualEffectView: UIVisualEffectView!
     
-    var cardHeight: CGFloat = 700
+    var cardHeight: CGFloat = 509
     var cardHandleAreaHeight: CGFloat = 330
     
     var cardVisible = false
