@@ -88,7 +88,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="masukBtn:" destination="cvw-Uc-Kxx" eventType="touchUpInside" id="1r9-Ys-Wjx"/>
-                                    <segue destination="qMY-rF-e90" kind="showDetail" identifier="toMain" id="rk4-KS-Uzb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pengguna baru?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Ok-j7-TDh">
@@ -139,14 +138,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="E2e-GQ-hyo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1266" y="-305"/>
-        </scene>
-        <!--Main-->
-        <scene sceneID="otr-Ei-glZ">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="qMY-rF-e90" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="5aB-F7-LJJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1202" y="-171"/>
         </scene>
     </scenes>
     <resources>

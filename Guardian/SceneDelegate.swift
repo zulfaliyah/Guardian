@@ -14,19 +14,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         let launchedBefore = UserDefaults.standard.bool(forKey: "hasLaunched")
-                let launchStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-                var vc: UIViewController
-                if launchedBefore
-                {
-                    vc = mainStoryboard.instantiateInitialViewController()!
+        let launchStoryboard = UIStoryboard(name: "Onboarding", bundle: nil)
+        let NasabahMainStoryboard = UIStoryboard(name: "NasabahMain", bundle: nil)
+        let AdminMainStoryboard = UIStoryboard(name: "AdminMain", bundle: nil)
+        
+        var vc = UIViewController()
+            if launchedBefore {
+                API().checkToken()
+                let level = UserDefaults.standard.integer(forKey: "userLevel")
+                if level == 0 {
+                    vc = AdminMainStoryboard.instantiateInitialViewController()!
+                } else if level == 2 {
+                    vc = NasabahMainStoryboard.instantiateInitialViewController()!
                 }
-                else
-                {
-                    vc = launchStoryboard.instantiateViewController(identifier: "Onboarding")
-                }
-                UserDefaults.standard.set(true, forKey: "hasLaunched")
-                self.window?.rootViewController = vc
+            } else {
+                vc = launchStoryboard.instantiateViewController(identifier: "Onboarding")
+            }
+        UserDefaults.standard.set(true, forKey: "hasLaunched")
+        self.window?.rootViewController = vc
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

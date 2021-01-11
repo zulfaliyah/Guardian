@@ -7,10 +7,11 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, UITextFieldDelegate {
+class LoginViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var usernameTF: FloatingLabel!
     @IBOutlet weak var passwordTF: FloatingLabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,10 +30,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func masukBtn(_ sender: Any) {
-        
-        API().login()
+        API().login(username: usernameTF.text ?? "", password: passwordTF.text ?? "")
         
     }
 }
+
 
 

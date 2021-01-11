@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RiwayatViewController" customModule="Guardian" customModuleProvider="target">
+            <connections>
+                <outlet property="content" destination="vgH-y0-39n" id="hRl-gR-5Qm"/>
+                <outlet property="handleArea" destination="5hf-Re-Cwb" id="WnC-Kq-DkM"/>
+                <outlet property="handlePin" destination="8vR-dn-8hD" id="pj1-zu-NKx"/>
+                <outlet property="mySeg" destination="NZ0-Jx-dgl" id="2nt-Sj-aC2"/>
+                <outlet property="tableView" destination="v5w-6k-hJ6" id="QxK-1N-ATt"/>
+                <outlet property="view" destination="Paq-5Q-w1t" id="wsu-VG-Gnz"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="Paq-5Q-w1t">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5hf-Re-Cwb">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8vR-dn-8hD">
+                            <rect key="frame" x="183" y="8" width="48" height="4"/>
+                            <color key="backgroundColor" name="Abu"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="48" id="5zN-Sv-iPi"/>
+                                <constraint firstAttribute="height" constant="4" id="OHm-uY-0k8"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Riwayat Transaksi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vua-dc-gDQ">
+                            <rect key="frame" x="20" y="31" width="195" height="29"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                            <color key="textColor" name="Hitam"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="OrangeMuda"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="vua-dc-gDQ" secondAttribute="bottom" constant="5" id="PEd-X0-Dnv"/>
+                        <constraint firstAttribute="trailing" secondItem="vua-dc-gDQ" secondAttribute="trailing" constant="199" id="TlW-bh-5hg"/>
+                        <constraint firstItem="8vR-dn-8hD" firstAttribute="top" secondItem="5hf-Re-Cwb" secondAttribute="top" constant="8" id="WcJ-oc-TrC"/>
+                        <constraint firstAttribute="trailing" secondItem="8vR-dn-8hD" secondAttribute="trailing" constant="183" id="YCc-wk-9Mm"/>
+                        <constraint firstItem="vua-dc-gDQ" firstAttribute="top" secondItem="8vR-dn-8hD" secondAttribute="bottom" constant="19" id="YsH-tf-yLC"/>
+                        <constraint firstItem="8vR-dn-8hD" firstAttribute="leading" secondItem="5hf-Re-Cwb" secondAttribute="leading" constant="183" id="fkH-0S-FaS"/>
+                        <constraint firstItem="vua-dc-gDQ" firstAttribute="leading" secondItem="5hf-Re-Cwb" secondAttribute="leading" constant="20" symbolic="YES" id="ida-Ev-NNg"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vgH-y0-39n">
+                    <rect key="frame" x="20" y="73" width="374" height="487"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="NZ0-Jx-dgl">
+                            <rect key="frame" x="20" y="22" width="334" height="32"/>
+                            <segments>
+                                <segment title="Penyetoran"/>
+                                <segment title="Pencairan"/>
+                            </segments>
+                            <connections>
+                                <action selector="segAction:" destination="-1" eventType="valueChanged" id="3yu-lb-auG"/>
+                            </connections>
+                        </segmentedControl>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="singleLineEtched" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="v5w-6k-hJ6">
+                            <rect key="frame" x="20" y="68" width="334" height="419"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="NZ0-Jx-dgl" secondAttribute="trailing" constant="20" symbolic="YES" id="Gad-S9-ntD"/>
+                        <constraint firstItem="v5w-6k-hJ6" firstAttribute="top" secondItem="NZ0-Jx-dgl" secondAttribute="bottom" constant="15" id="J65-m0-Shk"/>
+                        <constraint firstItem="NZ0-Jx-dgl" firstAttribute="top" secondItem="vgH-y0-39n" secondAttribute="top" constant="22" id="ZFy-yZ-wsh"/>
+                        <constraint firstAttribute="trailing" secondItem="v5w-6k-hJ6" secondAttribute="trailing" constant="20" symbolic="YES" id="fcI-nK-dlJ"/>
+                        <constraint firstItem="v5w-6k-hJ6" firstAttribute="leading" secondItem="vgH-y0-39n" secondAttribute="leading" constant="20" symbolic="YES" id="gnx-aX-ANH"/>
+                        <constraint firstItem="NZ0-Jx-dgl" firstAttribute="leading" secondItem="vgH-y0-39n" secondAttribute="leading" constant="20" symbolic="YES" id="rqw-TR-PpH"/>
+                        <constraint firstAttribute="bottom" secondItem="v5w-6k-hJ6" secondAttribute="bottom" id="ygh-kC-7vt"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fDs-Sw-jjb"/>
+            <color key="backgroundColor" name="OrangeMuda"/>
+            <constraints>
+                <constraint firstItem="vgH-y0-39n" firstAttribute="leading" secondItem="fDs-Sw-jjb" secondAttribute="leading" constant="20" id="VIO-ud-PGo"/>
+                <constraint firstItem="fDs-Sw-jjb" firstAttribute="trailing" secondItem="vgH-y0-39n" secondAttribute="trailing" constant="20" id="b3a-o3-TkU"/>
+                <constraint firstItem="vgH-y0-39n" firstAttribute="top" secondItem="5hf-Re-Cwb" secondAttribute="bottom" constant="8" id="fZB-Vc-ndF"/>
+                <constraint firstAttribute="trailing" secondItem="5hf-Re-Cwb" secondAttribute="trailing" id="iUj-J4-WzE"/>
+                <constraint firstItem="5hf-Re-Cwb" firstAttribute="top" secondItem="Paq-5Q-w1t" secondAttribute="top" id="n5P-VO-7Xh"/>
+                <constraint firstItem="5hf-Re-Cwb" firstAttribute="leading" secondItem="Paq-5Q-w1t" secondAttribute="leading" id="wjr-45-OdS"/>
+                <constraint firstItem="vgH-y0-39n" firstAttribute="bottom" secondItem="fDs-Sw-jjb" secondAttribute="bottom" id="xFa-ZD-ZxJ"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="128.98550724637681" y="42.1875"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Abu">
+            <color red="0.56499999761581421" green="0.56499999761581421" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Hitam">
+            <color red="0.29800000786781311" green="0.29800000786781311" blue="0.29800000786781311" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="OrangeMuda">
+            <color red="0.99198299649999999" green="0.96513921020000004" blue="0.94117194410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
