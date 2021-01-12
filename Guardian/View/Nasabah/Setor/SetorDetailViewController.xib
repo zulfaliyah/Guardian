@@ -144,6 +144,9 @@
                             <integer key="value" value="5"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="selesaiBtn:" destination="-1" eventType="touchUpInside" id="ulL-fa-PRf"/>
+                    </connections>
                 </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="jSz-fu-JHt"/>

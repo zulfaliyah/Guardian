@@ -16,9 +16,56 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHA-eA-Ep1" customClass="QRScannerView" customModule="MercariQRScanner">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WMe-dt-AZz" customClass="QRScannerView" customModule="MercariQRScanner">
+                                <rect key="frame" x="0.0" y="-5" width="414" height="906"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHA-eA-Ep1">
                                 <rect key="frame" x="0.0" y="-10" width="414" height="906"/>
-                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pindai QR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8N-Z6-RFT">
+                                        <rect key="frame" x="153" y="72.5" width="108" height="29"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pindai QR untuk membuka tong sampah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFk-Ck-0MO">
+                                        <rect key="frame" x="39" y="512" width="336" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="336" id="aS6-vi-pEJ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pemindaian akan otomatis dimulai" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7A-f3-lbZ">
+                                        <rect key="frame" x="78" y="542" width="258" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04Q-Yp-rau">
+                                        <rect key="frame" x="19" y="71" width="40" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="4gx-cz-Ffp"/>
+                                            <constraint firstAttribute="width" constant="40" id="grR-zN-yD9"/>
+                                        </constraints>
+                                        <state key="normal" image="chevron"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="04Q-Yp-rau" firstAttribute="top" secondItem="dHA-eA-Ep1" secondAttribute="top" constant="71" id="3m5-5S-EVX"/>
+                                    <constraint firstItem="tFk-Ck-0MO" firstAttribute="centerX" secondItem="e8N-Z6-RFT" secondAttribute="centerX" id="62C-cS-TCk"/>
+                                    <constraint firstItem="04Q-Yp-rau" firstAttribute="centerY" secondItem="e8N-Z6-RFT" secondAttribute="centerY" id="8YT-CQ-2e8"/>
+                                    <constraint firstItem="tFk-Ck-0MO" firstAttribute="centerX" secondItem="dHA-eA-Ep1" secondAttribute="centerX" id="BvJ-lh-uZV"/>
+                                    <constraint firstItem="e8N-Z6-RFT" firstAttribute="leading" secondItem="04Q-Yp-rau" secondAttribute="trailing" constant="94" id="Ecy-Tt-vbP"/>
+                                    <constraint firstItem="tFk-Ck-0MO" firstAttribute="centerX" secondItem="C7A-f3-lbZ" secondAttribute="centerX" id="TSq-uX-YfE"/>
+                                    <constraint firstItem="tFk-Ck-0MO" firstAttribute="leading" secondItem="dHA-eA-Ep1" secondAttribute="leading" constant="39" id="lum-no-Y3R"/>
+                                    <constraint firstItem="C7A-f3-lbZ" firstAttribute="top" secondItem="tFk-Ck-0MO" secondAttribute="bottom" constant="8" id="pcM-N7-LZh"/>
+                                    <constraint firstAttribute="bottom" secondItem="tFk-Ck-0MO" secondAttribute="bottom" constant="372" id="sPy-HK-Fk0"/>
+                                    <constraint firstItem="04Q-Yp-rau" firstAttribute="leading" secondItem="dHA-eA-Ep1" secondAttribute="leading" constant="19" id="seq-MP-JPg"/>
+                                </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="image" keyPath="focusImage" value="scan_qr_focus"/>
                                     <userDefinedRuntimeAttribute type="number" keyPath="animationDuration">
@@ -26,55 +73,18 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="04Q-Yp-rau">
-                                <rect key="frame" x="19" y="57" width="40" height="32"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="32" id="4gx-cz-Ffp"/>
-                                </constraints>
-                                <state key="normal" image="chevron"/>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pindai QR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e8N-Z6-RFT">
-                                <rect key="frame" x="156" y="58" width="108" height="29"/>
-                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pindai QR untuk membuka tong sampah" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFk-Ck-0MO">
-                                <rect key="frame" x="39" y="500" width="336" height="22"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pemindaian akan otomatis dimulai" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C7A-f3-lbZ">
-                                <rect key="frame" x="78" y="527" width="258" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="teu-ly-ZVO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="teu-ly-ZVO" firstAttribute="trailing" secondItem="e8N-Z6-RFT" secondAttribute="trailing" constant="150" id="2Xp-8L-pnh"/>
-                            <constraint firstItem="C7A-f3-lbZ" firstAttribute="top" secondItem="tFk-Ck-0MO" secondAttribute="bottom" constant="5" id="2nL-fJ-L4M"/>
                             <constraint firstItem="dHA-eA-Ep1" firstAttribute="centerY" secondItem="HXh-Mt-DgU" secondAttribute="centerY" constant="-5" id="5k9-3z-f8B"/>
-                            <constraint firstItem="tFk-Ck-0MO" firstAttribute="centerX" secondItem="C7A-f3-lbZ" secondAttribute="centerX" id="BU6-NP-8kL"/>
-                            <constraint firstItem="tFk-Ck-0MO" firstAttribute="leading" secondItem="teu-ly-ZVO" secondAttribute="leading" constant="39" id="GTT-vm-Qpl"/>
-                            <constraint firstItem="teu-ly-ZVO" firstAttribute="trailing" secondItem="04Q-Yp-rau" secondAttribute="trailing" constant="355" id="GTx-TJ-YkF"/>
-                            <constraint firstItem="e8N-Z6-RFT" firstAttribute="leading" secondItem="HXh-Mt-DgU" secondAttribute="leading" constant="156" id="OjQ-7c-w3m"/>
-                            <constraint firstItem="04Q-Yp-rau" firstAttribute="leading" secondItem="teu-ly-ZVO" secondAttribute="leading" constant="19" id="R7h-Qi-4O2"/>
-                            <constraint firstItem="04Q-Yp-rau" firstAttribute="top" secondItem="teu-ly-ZVO" secondAttribute="top" constant="13" id="STg-I1-nd6"/>
                             <constraint firstItem="dHA-eA-Ep1" firstAttribute="top" secondItem="HXh-Mt-DgU" secondAttribute="topMargin" constant="-54" id="SXr-Ng-j2W"/>
-                            <constraint firstItem="tFk-Ck-0MO" firstAttribute="centerX" secondItem="HXh-Mt-DgU" secondAttribute="centerX" id="b7V-XC-7H6"/>
-                            <constraint firstItem="teu-ly-ZVO" firstAttribute="bottom" secondItem="tFk-Ck-0MO" secondAttribute="bottom" constant="340" id="f21-oC-RR2"/>
                             <constraint firstItem="dHA-eA-Ep1" firstAttribute="leading" secondItem="teu-ly-ZVO" secondAttribute="leading" id="ggU-Co-pLh"/>
-                            <constraint firstItem="C7A-f3-lbZ" firstAttribute="centerX" secondItem="dHA-eA-Ep1" secondAttribute="centerX" id="kwh-QD-gGe"/>
-                            <constraint firstItem="tFk-Ck-0MO" firstAttribute="centerX" secondItem="dHA-eA-Ep1" secondAttribute="centerX" id="oyZ-PL-Fw2"/>
-                            <constraint firstItem="e8N-Z6-RFT" firstAttribute="top" secondItem="teu-ly-ZVO" secondAttribute="top" constant="14" id="syb-yf-H19"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="qrScannerView" destination="dHA-eA-Ep1" id="4az-jj-aho"/>
+                        <outlet property="propertyView" destination="dHA-eA-Ep1" id="c55-ee-X7D"/>
+                        <outlet property="qrScannerView" destination="WMe-dt-AZz" id="C5F-VN-uhf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5qI-PB-ESz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -85,9 +95,6 @@
     <resources>
         <image name="chevron" width="90" height="90"/>
         <image name="scan_qr_focus" width="117" height="117"/>
-        <systemColor name="opaqueSeparatorColor">
-            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

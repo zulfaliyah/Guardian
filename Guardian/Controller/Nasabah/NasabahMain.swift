@@ -14,6 +14,14 @@ class NasabahMain: UIViewController {
     
     private let imageView = UIImageView(image: UIImage(named: "account"))
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        print("viewWillLoad - Table View")
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()

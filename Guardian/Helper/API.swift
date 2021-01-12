@@ -12,7 +12,7 @@ import SwiftyJSON
 
 class API: UIViewController {
 
-    let keychain = Keychain(server: "http://192.168.1.3:3000", protocolType: .http)
+    let keychain = Keychain(server: "http://192.168.1.8:3000", protocolType: .http)
     
     
     func checkToken() {
@@ -31,7 +31,7 @@ class API: UIViewController {
         ]
         print (parameter)
 
-        AF.request("http://192.168.1.3:3000/api/v1/public/login", method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil)
+        AF.request("http://192.168.1.8:3000/api/v1/public/login", method: .post, parameters: parameter, encoding: URLEncoding.default, headers: nil)
             .responseJSON { [self] response in
                 if let value = response.value {
                     let json = JSON(value)
@@ -77,7 +77,7 @@ class API: UIViewController {
         ]
         print (headers)
 
-        AF.request("http://192.168.1.3:3000/api/v1/machine/scan", method: .post, parameters: parameter, encoding: URLEncoding.default, headers: headers)
+        AF.request("http://192.168.1.8:3000/api/v1/machine/scan", method: .post, parameters: parameter, encoding: URLEncoding.default, headers: headers)
             .responseJSON { response in
                 if let value = response.value {
                     let json = JSON(value)
