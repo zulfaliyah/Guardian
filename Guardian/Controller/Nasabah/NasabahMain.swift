@@ -11,6 +11,9 @@ class NasabahMain: UIViewController {
     @IBOutlet weak var cardImg: UIImageView!
     @IBOutlet weak var cairBtn: UIButton!
     @IBOutlet weak var setorBtn: UIView!
+    @IBAction func cairBtn(_ sender: Any) {
+        
+    }
     
     private let imageView = UIImageView(image: UIImage(named: "account"))
     
