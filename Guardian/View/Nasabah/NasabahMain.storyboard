@@ -18,26 +18,26 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card" translatesAutoresizingMaskIntoConstraints="NO" id="THG-rE-prl">
-                                <rect key="frame" x="28" y="150" width="358" height="221"/>
+                                <rect key="frame" x="28" y="98" width="358" height="221"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="358" id="CTV-EH-6Gx"/>
                                     <constraint firstAttribute="height" constant="221" id="Wb0-P8-qhs"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saldo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WD9-gq-qSS">
-                                <rect key="frame" x="46" y="192" width="43" height="21"/>
+                                <rect key="frame" x="46" y="140" width="43" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.18109408020000001" green="0.345506072" blue="0.31764703989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rp 120000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IOj-hk-MVg">
-                                <rect key="frame" x="46" y="214" width="206" height="34"/>
+                                <rect key="frame" x="46" y="162" width="206" height="34"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
                                 <color key="textColor" red="0.22004827860000001" green="0.34153229000000002" blue="0.31764680150000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8ar-w6-SmZ">
-                                <rect key="frame" x="260" y="196" width="102" height="44"/>
+                                <rect key="frame" x="260" y="144" width="102" height="44"/>
                                 <color key="backgroundColor" red="0.95148974659999996" green="0.52584135529999998" blue="0.16056287289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="102" id="75N-iY-1s3"/>
@@ -46,11 +46,11 @@
                                     <color key="titleColor" red="0.96471971270000001" green="0.96463483569999997" blue="0.96862810850000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 </state>
                                 <connections>
-                                    <action selector="cairBtn:" destination="TZh-kL-CWj" eventType="touchUpInside" id="Ccn-cQ-LR3"/>
+                                    <action selector="cairBtn:" destination="TZh-kL-CWj" eventType="touchUpInside" id="OwZ-rw-zYs"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Zulfa Aliyah" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Rs-VI-Wi5">
-                                <rect key="frame" x="109" y="305" width="253" height="21"/>
+                                <rect key="frame" x="109" y="253" width="253" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="6vw-jZ-dnz"/>
                                 </constraints>
@@ -59,23 +59,21 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="081371746357" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eDh-qH-3b6">
-                                <rect key="frame" x="109" y="330" width="253" height="21"/>
+                                <rect key="frame" x="109" y="278" width="253" height="21"/>
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.22004827860000001" green="0.34153229000000002" blue="0.31764680150000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="PDt-ZA-DPX" appends="YES" id="tWZ-oq-JmR"/>
-                                </connections>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NR3-51-DfY">
-                                <rect key="frame" x="0.0" y="398" width="414" height="498"/>
+                                <rect key="frame" x="0.0" y="346" width="414" height="550"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBC-9w-xkt">
                                         <rect key="frame" x="28" y="25" width="358" height="119"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Scan" translatesAutoresizingMaskIntoConstraints="NO" id="2pC-nM-aMp">
                                                 <rect key="frame" x="15" y="25" width="68" height="69"/>
+                                                <gestureRecognizers/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="69" id="JAi-6H-Gf5"/>
                                                     <constraint firstAttribute="width" constant="68" id="LWT-uS-out"/>
@@ -163,24 +161,15 @@
                             <constraint firstItem="6Rs-VI-Wi5" firstAttribute="leading" secondItem="tuw-Hv-4HB" secondAttribute="leading" constant="109" id="sik-e7-1ew"/>
                             <constraint firstItem="6Rs-VI-Wi5" firstAttribute="trailing" secondItem="eDh-qH-3b6" secondAttribute="trailing" id="x2R-4t-CsN"/>
                         </constraints>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="PDt-ZA-DPX" appends="YES" id="jRL-qv-72B"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" title="Dashboard" largeTitleDisplayMode="always" id="R3s-zd-vu3"/>
                     <connections>
-                        <outlet property="cairBtn" destination="8ar-w6-SmZ" id="mAR-KO-ELZ"/>
+                        <outlet property="cairBtn" destination="8ar-w6-SmZ" id="rt3-Iv-r52"/>
                         <outlet property="cardImg" destination="THG-rE-prl" id="STU-as-tkj"/>
-                        <outlet property="setorBtn" destination="YBC-9w-xkt" id="HyX-3z-2yv"/>
+                        <outlet property="setorBtn" destination="YBC-9w-xkt" id="zgA-AQ-vw3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="54y-9F-0JE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="PDt-ZA-DPX">
-                    <connections>
-                        <action selector="setorTapped:" destination="TZh-kL-CWj" id="ywS-ds-gas"/>
-                        <outlet property="delegate" destination="YBC-9w-xkt" id="yAg-kQ-QjW"/>
-                    </connections>
-                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-1152.1739130434783" y="28.794642857142854"/>
         </scene>
@@ -188,8 +177,8 @@
         <scene sceneID="C8L-9a-tm4">
             <objects>
                 <navigationController id="85f-af-7LS" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5ef-Zu-Wl0">
-                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5ef-Zu-Wl0">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>

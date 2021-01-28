@@ -6,33 +6,43 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
+import KeychainAccess
 
-class RiwayatViewController: UIViewController {
+struct Riwayat {
+    var tanggal: String?
+    var botol: String?
+    var uang: String?
+}
+
+class RiwayatViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
+
+    let server = "http://grainy.id/api/v1/"
+    let keychain = Keychain(server: "http://grainy.id", protocolType: .http)
     
-
     @IBOutlet weak var handleArea: UIView!
     @IBOutlet weak var handlePin: UIView!
     @IBOutlet weak var content: UIView!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var mySeg: UISegmentedControl!
-    
     @IBAction func segAction(_ sender: UISegmentedControl) {
-        self.tableView.reloadData()
+
+        switch sender.selectedSegmentIndex { // use the `sender` parameter rather than the outlet reference
+            case 0:
+                riwayatTransaksi(trxType: 0)
+            case 1:
+                riwayatTransaksi(trxType: 1)
+            default:
+                break
+        }
+        
+        tableView.reloadData()
     }
-    
-    var estimateWidth = 140.0
-    var cellMarginSize = 20.0
-    
+
     var image = UIImage(named: "setor")
-    var tanggal:[String] = ["1 Desember 2020", "2 Desember 2020", "3 Desember 2020"]
-    var botol:[String] = ["2", "3", "4"]
-    var uang:[String] = ["1000", "2000", "3000"]
-    
     var image1 = UIImage(named: "cair")
-    var tanggal1:[String] = ["21 Desember 2020", "21 Desember 2020", "31 Desember 2020"]
-    var botol1:[String] = ["21", "31", "41"]
-    var uang1:[String] = ["11000", "21000", "31000"]
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,50 +51,83 @@ class RiwayatViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
-        tableView.register(UINib(nibName: "RiwayatItemTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        tableView.register(UINib(nibName: "RiwayatItemTableViewCell", bundle: nil), forCellReuseIdentifier: "setorCell")
+        tableView.register(UINib(nibName: "RiwayatPencairanTableViewCell", bundle: nil), forCellReuseIdentifier: "cairCell")
     }
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        riwayatTransaksi(trxType: 0)
     }
     
-}
+    var jsonData = [Riwayat]()
+    
+    func riwayatTransaksi(trxType: Int){
+        self.jsonData=[]
+        
+        let parameter: Parameters = [
+            "trxType": trxType
+        ]
+        print (parameter)
+        
+        let header : HTTPHeaders = [
+            "g-token" : keychain["token"] ?? ""
+        ]
+        print (header)
 
-extension RiwayatViewController: UITableViewDataSource {
+        AF.request( server + "transaction-list", method: .post, parameters: parameter, encoding: URLEncoding.default, headers: header)
+            .responseJSON {  response in
+                
+                if let value = response.value{
+                    let json = JSON(value)
+                    let results = json["data"].arrayValue
+                        for result in results {
+                            let botol = result["quantity"].stringValue
+                            let uang = result["amount"].stringValue
+                            let tanggal = result["created_at"].stringValue
+                            self.jsonData.append(Riwayat(tanggal: tanggal, botol: botol, uang: uang))
+                            print(self.jsonData)
+                            self.tableView.reloadData()
+                        }
+
+                    self.tableView.reloadData()
+                }
+                self.tableView.reloadData()
+        }
+        
+        self.tableView.reloadData()
+    }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return uang.count
+        print(jsonData.count)
+        return jsonData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! RiwayatItemTableViewCell
-        cell.selectionStyle = .none
         
         let selectedIndex = self.mySeg.selectedSegmentIndex
-        switch selectedIndex
-            {
+        switch selectedIndex {
             case 0:
-                cell.uangImg.image = image
-                cell.tanggalLabel.text = tanggal[indexPath.row]
-                cell.tanggalLabel.text = tanggal[indexPath.row]
-                cell.botolLabel.text = botol[indexPath.row]+" Botol"
-                cell.uangLabel.text = "+ " + uang[indexPath.row]
-            case 1:
-                cell.uangImg.image = image1
-                cell.tanggalLabel.text = tanggal1[indexPath.row]
-                cell.botolLabel.text = botol1[indexPath.row]+" Botol"
-                cell.uangLabel.text = "+ " + uang1[indexPath.row]
-            default:
-                return cell
-            }
+                let cell = tableView.dequeueReusableCell(withIdentifier: "setorCell", for: indexPath) as! RiwayatItemTableViewCell
+                cell.selectionStyle = .none
+                        cell.uangImg.image = self.image
+                        cell.tanggalLabel.text = jsonData[indexPath.row].tanggal!
+                        cell.botolLabel.text = jsonData[indexPath.row].botol! + " botol"
+                        cell.uangLabel.text = "Rp " + jsonData[indexPath.row].uang!
+                        
         return cell
-        
+            case 1:
+                print(jsonData[0].tanggal!)
+                let cell = tableView.dequeueReusableCell(withIdentifier: "cairCell", for: indexPath) as! RiwayatPencairanTableViewCell
+                cell.selectionStyle = .none
+                cell.uangImgCair.image = self.image1
+                cell.tanggalLabelCair.text = jsonData[indexPath.row].tanggal!
+                cell.uangLabelCair.text = "Rp " + jsonData[indexPath.row].uang!
+                return cell
+            default: break
+         }
+        return UITableViewCell()
     }
+
 }
 
-extension RiwayatViewController: UITableViewDelegate{
-    
-}
 

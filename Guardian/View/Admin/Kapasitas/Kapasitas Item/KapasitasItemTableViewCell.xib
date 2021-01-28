@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="kapasitasCell" id="KGk-i7-Jjw" customClass="KapasitasItemTableViewCell" customModule="Guardian" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="335" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="tXY-AR-bLE">
+                        <rect key="frame" x="10" y="16" width="48" height="48"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="48" id="EVd-WN-Z5b"/>
+                            <constraint firstAttribute="height" constant="48" id="Fuf-Or-e4o"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="48" id="syI-VR-drl"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tong Sampah Sei Jang" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pyd-bF-PCK">
+                        <rect key="frame" x="66" y="30" width="180" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="180" id="52M-Y7-mNj"/>
+                            <constraint firstAttribute="height" constant="21" id="Aj4-Q2-Y1l"/>
+                            <constraint firstAttribute="width" constant="180" id="fiv-h5-h7t"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="45 %" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TKS-0j-SuJ">
+                        <rect key="frame" x="248" y="30" width="77" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="77" id="8IJ-Vl-jQM"/>
+                            <constraint firstAttribute="height" constant="21" id="KdS-VL-wfO"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <color key="textColor" name="Hijau Muda"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="tXY-AR-bLE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="3YT-9G-a4h"/>
+                    <constraint firstItem="TKS-0j-SuJ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="8Aa-iF-dre"/>
+                    <constraint firstItem="Pyd-bF-PCK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="Cc8-ti-r2f"/>
+                    <constraint firstAttribute="bottom" secondItem="Pyd-bF-PCK" secondAttribute="bottom" constant="29" id="Eby-lv-VeE"/>
+                    <constraint firstItem="TKS-0j-SuJ" firstAttribute="leading" secondItem="Pyd-bF-PCK" secondAttribute="trailing" constant="2" id="JH1-eo-0YT"/>
+                    <constraint firstItem="TKS-0j-SuJ" firstAttribute="leading" secondItem="Pyd-bF-PCK" secondAttribute="trailing" constant="2" id="M2L-W3-rUm"/>
+                    <constraint firstItem="Pyd-bF-PCK" firstAttribute="leading" secondItem="tXY-AR-bLE" secondAttribute="trailing" constant="8" id="Q2r-5R-xbu"/>
+                    <constraint firstItem="tXY-AR-bLE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="QA2-3a-sf8"/>
+                    <constraint firstAttribute="bottom" secondItem="TKS-0j-SuJ" secondAttribute="bottom" constant="29" id="YmI-vU-kV3"/>
+                    <constraint firstAttribute="bottom" secondItem="tXY-AR-bLE" secondAttribute="bottom" constant="16" id="iOf-6p-htv"/>
+                    <constraint firstItem="tXY-AR-bLE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="kv1-M4-Z3r"/>
+                    <constraint firstAttribute="bottom" secondItem="tXY-AR-bLE" secondAttribute="bottom" constant="16" id="oaM-Fs-EcD"/>
+                    <constraint firstItem="Pyd-bF-PCK" firstAttribute="leading" secondItem="tXY-AR-bLE" secondAttribute="trailing" constant="8" id="r9F-Nn-WH9"/>
+                    <constraint firstAttribute="trailing" secondItem="TKS-0j-SuJ" secondAttribute="trailing" constant="10" id="rni-3M-wbX"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="kapasitasTong" destination="TKS-0j-SuJ" id="Hlz-jS-Eoa"/>
+                <outlet property="namaTong" destination="Pyd-bF-PCK" id="fi1-iI-5MH"/>
+                <outlet property="tongImg" destination="tXY-AR-bLE" id="lBq-Jx-pJr"/>
+            </connections>
+            <point key="canvasLocation" x="25.362318840579711" y="81.696428571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="map" width="193" height="192"/>
+        <namedColor name="Hijau Muda">
+            <color red="0.50999999046325684" green="0.63200002908706665" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

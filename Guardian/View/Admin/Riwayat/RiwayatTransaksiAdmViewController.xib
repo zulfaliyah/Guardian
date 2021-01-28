@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RiwayatTransaksiAdmViewController" customModule="Guardian" customModuleProvider="target">
+            <connections>
+                <outlet property="content" destination="IeW-hD-TmS" id="JUy-SW-UaC"/>
+                <outlet property="handleArea" destination="fRz-bL-OZL" id="zaj-Nt-zrH"/>
+                <outlet property="handlePin" destination="e76-pd-7yT" id="aVL-Xw-oW6"/>
+                <outlet property="mySeg" destination="jtQ-dH-0nj" id="w6a-Qp-Axb"/>
+                <outlet property="tableView" destination="IeW-hD-TmS" id="gwq-Zu-80M"/>
+                <outlet property="view" destination="wKW-h1-Ynv" id="r2d-2b-hDQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="wKW-h1-Ynv">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="560"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fRz-bL-OZL">
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e76-pd-7yT">
+                            <rect key="frame" x="183" y="8" width="48" height="4"/>
+                            <color key="backgroundColor" name="Abu"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="48" id="j0f-5x-md7"/>
+                                <constraint firstAttribute="height" constant="4" id="xSK-Wf-8mB"/>
+                            </constraints>
+                        </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Riwayat Transaksi" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="135-i9-Rnu">
+                            <rect key="frame" x="20" y="31" width="195" height="29"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
+                            <color key="textColor" name="Hitam"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" name="OrangeMuda"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="135-i9-Rnu" secondAttribute="bottom" constant="5" id="ChN-GV-7tT"/>
+                        <constraint firstAttribute="trailing" secondItem="135-i9-Rnu" secondAttribute="trailing" constant="199" id="KIl-2V-tcw"/>
+                        <constraint firstItem="135-i9-Rnu" firstAttribute="leading" secondItem="fRz-bL-OZL" secondAttribute="leading" constant="20" symbolic="YES" id="KbK-TJ-S7J"/>
+                        <constraint firstItem="135-i9-Rnu" firstAttribute="top" secondItem="e76-pd-7yT" secondAttribute="bottom" constant="19" id="N46-MQ-hvb"/>
+                        <constraint firstAttribute="trailing" secondItem="e76-pd-7yT" secondAttribute="trailing" constant="183" id="XN8-ph-8x5"/>
+                        <constraint firstItem="e76-pd-7yT" firstAttribute="leading" secondItem="fRz-bL-OZL" secondAttribute="leading" constant="183" id="uz7-xO-hZG"/>
+                        <constraint firstItem="e76-pd-7yT" firstAttribute="top" secondItem="fRz-bL-OZL" secondAttribute="top" constant="8" id="xm2-eU-A91"/>
+                    </constraints>
+                </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J9N-jr-zBw">
+                    <rect key="frame" x="20" y="73" width="374" height="487"/>
+                    <subviews>
+                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jtQ-dH-0nj">
+                            <rect key="frame" x="20" y="22" width="334" height="32"/>
+                            <segments>
+                                <segment title="Penyetoran"/>
+                                <segment title="Pencairan"/>
+                            </segments>
+                            <connections>
+                                <action selector="segAction:" destination="-1" eventType="valueChanged" id="v1t-JY-PIL"/>
+                            </connections>
+                        </segmentedControl>
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="IeW-hD-TmS">
+                            <rect key="frame" x="20" y="68" width="334" height="419"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        </tableView>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="IeW-hD-TmS" firstAttribute="leading" secondItem="J9N-jr-zBw" secondAttribute="leading" constant="20" symbolic="YES" id="0WJ-NT-9rt"/>
+                        <constraint firstAttribute="trailing" secondItem="jtQ-dH-0nj" secondAttribute="trailing" constant="20" symbolic="YES" id="BGk-W6-Wpc"/>
+                        <constraint firstItem="IeW-hD-TmS" firstAttribute="top" secondItem="jtQ-dH-0nj" secondAttribute="bottom" constant="15" id="BWF-16-6M8"/>
+                        <constraint firstAttribute="trailing" secondItem="IeW-hD-TmS" secondAttribute="trailing" constant="20" symbolic="YES" id="Rif-Zc-rRS"/>
+                        <constraint firstAttribute="bottom" secondItem="IeW-hD-TmS" secondAttribute="bottom" id="Thx-gL-Wuy"/>
+                        <constraint firstItem="jtQ-dH-0nj" firstAttribute="top" secondItem="J9N-jr-zBw" secondAttribute="top" constant="22" id="Xhz-69-9ne"/>
+                        <constraint firstItem="jtQ-dH-0nj" firstAttribute="leading" secondItem="J9N-jr-zBw" secondAttribute="leading" constant="20" symbolic="YES" id="gMO-fO-OCf"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                            <integer key="value" value="15"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="q0y-VS-b0k"/>
+            <color key="backgroundColor" name="OrangeMuda"/>
+            <constraints>
+                <constraint firstItem="J9N-jr-zBw" firstAttribute="bottom" secondItem="q0y-VS-b0k" secondAttribute="bottom" id="SIX-jo-YlV"/>
+                <constraint firstItem="fRz-bL-OZL" firstAttribute="leading" secondItem="wKW-h1-Ynv" secondAttribute="leading" id="Udk-vc-UAj"/>
+                <constraint firstItem="J9N-jr-zBw" firstAttribute="leading" secondItem="q0y-VS-b0k" secondAttribute="leading" constant="20" id="W2Z-tu-NCW"/>
+                <constraint firstItem="J9N-jr-zBw" firstAttribute="top" secondItem="fRz-bL-OZL" secondAttribute="bottom" constant="8" id="dyM-ka-LTL"/>
+                <constraint firstItem="q0y-VS-b0k" firstAttribute="trailing" secondItem="J9N-jr-zBw" secondAttribute="trailing" constant="20" id="nKB-6H-LsV"/>
+                <constraint firstItem="fRz-bL-OZL" firstAttribute="top" secondItem="wKW-h1-Ynv" secondAttribute="top" id="xoP-Gq-dwt"/>
+                <constraint firstAttribute="trailing" secondItem="fRz-bL-OZL" secondAttribute="trailing" id="z0P-x9-3Jk"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                    <integer key="value" value="20"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <point key="canvasLocation" x="128.98550724637681" y="42.1875"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="Abu">
+            <color red="0.56499999761581421" green="0.56499999761581421" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Hitam">
+            <color red="0.29800000786781311" green="0.29800000786781311" blue="0.29800000786781311" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="OrangeMuda">
+            <color red="0.99199998378753662" green="0.9649999737739563" blue="0.94099998474121094" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

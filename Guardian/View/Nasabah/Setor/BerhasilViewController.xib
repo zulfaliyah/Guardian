@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BerhasilViewController" customModule="Guardian" customModuleProvider="target">
             <connections>
+                <outlet property="berhasilLabel" destination="Z3M-b8-6pZ" id="rBT-6w-yzS"/>
                 <outlet property="berhasilView" destination="dsq-2w-SMV" id="oFd-8S-1Cq"/>
                 <outlet property="siapBtn" destination="BFD-Re-11t" id="40g-vB-kfu"/>
                 <outlet property="view" destination="dsq-2w-SMV" id="Yr6-lb-ZDJ"/>
@@ -76,6 +77,7 @@
                 </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="mfO-2Q-XRV"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <userDefinedRuntimeAttributes>
                 <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

@@ -33,6 +33,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         API().login(username: usernameTF.text ?? "", password: passwordTF.text ?? "")
         
     }
+    
+    func nextViewAction() {
+        self.performSegue(withIdentifier: "toAdminMain", sender: self)
+    }
+    
 }
 
 

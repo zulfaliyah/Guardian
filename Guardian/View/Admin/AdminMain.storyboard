@@ -1,39 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Byt-ka-7qc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="OuT-he-DEO">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Admin Main-->
+        <!--Navigation Controller-->
+        <scene sceneID="tv6-gi-w9V">
+            <objects>
+                <navigationController id="OuT-he-DEO" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jUe-EN-DGq">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Byt-ka-7qc" kind="relationship" relationship="rootViewController" id="cNg-cq-TV4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nfZ-Iy-luV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-928" y="86"/>
+        </scene>
+        <!--Dashboard-->
         <scene sceneID="F7p-Q7-Vop">
             <objects>
-                <viewController storyboardIdentifier="AdminMain" id="Byt-ka-7qc" customClass="AdminMain" customModule="Guardian" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="HpM-hA-dQI">
+                <viewController storyboardIdentifier="AdminMain" modalPresentationStyle="fullScreen" id="Byt-ka-7qc" customClass="AdminMain" customModule="Guardian" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uE0-rA-jgS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Main Screen Admin" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kyd-ES-bon">
-                                <rect key="frame" x="134" y="438" width="147" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card" translatesAutoresizingMaskIntoConstraints="NO" id="33q-l6-4rF">
+                                <rect key="frame" x="28.5" y="98" width="357" height="221"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="357" id="kxT-pP-mYd"/>
+                                    <constraint firstAttribute="height" constant="221" id="xQw-V3-wcn"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qib-zU-G3L">
+                                <rect key="frame" x="0.0" y="346" width="414" height="550"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bKW-7U-fPJ">
+                                        <rect key="frame" x="214" y="24" width="170" height="105"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Scan" translatesAutoresizingMaskIntoConstraints="NO" id="ben-iT-Ncj">
+                                                <rect key="frame" x="12" y="13" width="47" height="49"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <gestureRecognizers/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Setujui Pencairan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="594-aU-zlc">
+                                                <rect key="frame" x="12" y="70" width="136" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <color key="textColor" name="Hitam"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="rIZ-Gw-SZn" appends="YES" id="e12-GT-HWu"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aaf-Qf-Lgf">
+                                        <rect key="frame" x="30" y="24" width="170" height="105"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="profil" translatesAutoresizingMaskIntoConstraints="NO" id="sI6-In-BPj">
+                                                <rect key="frame" x="15" y="13" width="47" height="49"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <gestureRecognizers/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daftar Nasabah" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CG5-mO-7sW">
+                                                <rect key="frame" x="15" y="70" width="122" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                                <color key="textColor" name="Hitam"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <gestureRecognizers/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="qzi-JO-NyX" appends="YES" id="ngq-bU-zqj"/>
+                                        </connections>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="20"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nasabah" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vu-ao-pba">
+                                <rect key="frame" x="54" y="143" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" red="0.18109408020000001" green="0.345506072" blue="0.31764703989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uh8-qQ-WUY">
+                                <rect key="frame" x="54" y="165" width="102" height="34"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" red="0.22004827860000001" green="0.34153229000000002" blue="0.31764680150000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sampah hari ini" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="03V-wM-ASm">
+                                <rect key="frame" x="54" y="217" width="117" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.18109408020000001" green="0.345506072" blue="0.31764703989999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h6e-rl-HMg">
+                                <rect key="frame" x="54" y="239" width="102" height="34"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="28"/>
+                                <color key="textColor" red="0.22004827860000001" green="0.34153229000000002" blue="0.31764680150000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="aCz-d0-I1N"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <viewLayoutGuide key="safeArea" id="zcG-fO-Kbc"/>
+                        <color key="backgroundColor" red="0.96471971270000001" green="0.96463483569999997" blue="0.96862810850000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="8vu-ao-pba" firstAttribute="top" secondItem="zcG-fO-Kbc" secondAttribute="top" constant="55" id="3jj-Vf-Xee"/>
+                            <constraint firstItem="Uh8-qQ-WUY" firstAttribute="leading" secondItem="03V-wM-ASm" secondAttribute="leading" id="6xx-DS-8KJ"/>
+                            <constraint firstItem="Uh8-qQ-WUY" firstAttribute="top" secondItem="8vu-ao-pba" secondAttribute="bottom" constant="1" id="7DK-gs-K1L"/>
+                            <constraint firstItem="03V-wM-ASm" firstAttribute="top" secondItem="Uh8-qQ-WUY" secondAttribute="bottom" constant="18" id="G1Y-B2-JI3"/>
+                            <constraint firstItem="zcG-fO-Kbc" firstAttribute="trailing" secondItem="Uh8-qQ-WUY" secondAttribute="trailing" constant="258" id="L9C-TY-ZAf"/>
+                            <constraint firstItem="Uh8-qQ-WUY" firstAttribute="leading" secondItem="h6e-rl-HMg" secondAttribute="leading" id="M7j-ki-xPh"/>
+                            <constraint firstItem="33q-l6-4rF" firstAttribute="top" secondItem="zcG-fO-Kbc" secondAttribute="top" constant="10" id="PDI-ga-Y4I"/>
+                            <constraint firstItem="qib-zU-G3L" firstAttribute="top" secondItem="33q-l6-4rF" secondAttribute="bottom" constant="27" id="XUq-3d-c0B"/>
+                            <constraint firstItem="h6e-rl-HMg" firstAttribute="top" secondItem="03V-wM-ASm" secondAttribute="bottom" constant="1" id="XxS-NS-lPX"/>
+                            <constraint firstItem="Uh8-qQ-WUY" firstAttribute="leading" secondItem="8vu-ao-pba" secondAttribute="leading" id="Ypl-dE-SIv"/>
+                            <constraint firstItem="33q-l6-4rF" firstAttribute="centerX" secondItem="uE0-rA-jgS" secondAttribute="centerX" id="ZRD-wh-rwl"/>
+                            <constraint firstItem="qib-zU-G3L" firstAttribute="leading" secondItem="zcG-fO-Kbc" secondAttribute="leading" id="aB1-ay-I1Z"/>
+                            <constraint firstItem="33q-l6-4rF" firstAttribute="centerX" secondItem="qib-zU-G3L" secondAttribute="centerX" id="dfC-gK-F7Z"/>
+                            <constraint firstItem="Uh8-qQ-WUY" firstAttribute="trailing" secondItem="h6e-rl-HMg" secondAttribute="trailing" id="r4c-01-wF3"/>
+                            <constraint firstItem="Uh8-qQ-WUY" firstAttribute="leading" secondItem="zcG-fO-Kbc" secondAttribute="leading" constant="54" id="rtE-Mi-47J"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="qib-zU-G3L" secondAttribute="bottom" constant="-34" id="u6I-hF-ke5"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Dashboard" id="3zj-WU-3Nj"/>
+                    <connections>
+                        <outlet property="cardImg" destination="33q-l6-4rF" id="yAy-DX-Vlu"/>
+                        <outlet property="daftarBtn" destination="Aaf-Qf-Lgf" id="kbR-RA-0aE"/>
+                        <outlet property="nasabahLabel" destination="Uh8-qQ-WUY" id="b3z-mE-Jh2"/>
+                        <outlet property="sampahLabel" destination="h6e-rl-HMg" id="gZp-7a-psD"/>
+                        <outlet property="setujuiBtn" destination="bKW-7U-fPJ" id="blW-k8-RJf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PdW-D2-ANG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="rIZ-Gw-SZn"/>
+                <tapGestureRecognizer id="qzi-JO-NyX"/>
             </objects>
-            <point key="canvasLocation" x="209" y="87"/>
+            <point key="canvasLocation" x="208.69565217391306" y="86.383928571428569"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Scan" width="68" height="68"/>
+        <image name="card" width="357" height="219"/>
+        <image name="profil" width="188" height="184"/>
+        <namedColor name="Hitam">
+            <color red="0.29800000786781311" green="0.29800000786781311" blue="0.29800000786781311" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

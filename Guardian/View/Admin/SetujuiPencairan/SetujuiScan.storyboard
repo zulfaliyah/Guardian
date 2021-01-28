@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="iQH-Sw-IOT">
+            <objects>
+                <navigationController id="Hlo-b7-7BC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="lal-Ge-M8e">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="bEV-y4-u3o" kind="relationship" relationship="rootViewController" id="AGF-uO-kL9"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ebj-cp-cFe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="107" y="-137"/>
+        </scene>
+        <!--Setujui Pencairan-->
+        <scene sceneID="7ty-hi-Amx">
+            <objects>
+                <viewController storyboardIdentifier="SetujuiPencairan" id="bEV-y4-u3o" customClass="SetujuiPencairanViewController" customModule="Guardian" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DD1-WQ-Euz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="n9m-Od-zIT" customClass="QRScannerView" customModule="MercariQRScanner">
+                                <rect key="frame" x="0.0" y="-5" width="414" height="906"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lCE-jK-uC1">
+                                <rect key="frame" x="0.0" y="34" width="414" height="818"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pindai QR untuk menyetujui pencairan" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xWb-w2-I59">
+                                        <rect key="frame" x="39" y="502" width="336" height="22"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="336" id="8dL-du-Mqk"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pemindaian akan otomatis dimulai" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="517-xa-fUV">
+                                        <rect key="frame" x="78" y="532" width="258" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="517-xa-fUV" firstAttribute="top" secondItem="xWb-w2-I59" secondAttribute="bottom" constant="8" id="JGq-YF-l5J"/>
+                                    <constraint firstItem="xWb-w2-I59" firstAttribute="centerX" secondItem="517-xa-fUV" secondAttribute="centerX" id="X2r-By-evW"/>
+                                    <constraint firstAttribute="bottom" secondItem="xWb-w2-I59" secondAttribute="bottom" constant="294" id="boB-FD-dYV"/>
+                                    <constraint firstItem="xWb-w2-I59" firstAttribute="leading" secondItem="lCE-jK-uC1" secondAttribute="leading" constant="39" id="hpd-gp-mtl"/>
+                                    <constraint firstItem="xWb-w2-I59" firstAttribute="centerX" secondItem="lCE-jK-uC1" secondAttribute="centerX" id="rey-gZ-hru"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Yo4-in-W3F"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="lCE-jK-uC1" firstAttribute="top" secondItem="DD1-WQ-Euz" secondAttribute="topMargin" constant="-54" id="3OF-ow-qQh"/>
+                            <constraint firstItem="lCE-jK-uC1" firstAttribute="centerY" secondItem="DD1-WQ-Euz" secondAttribute="centerY" constant="-5" id="d8F-wc-t63"/>
+                            <constraint firstItem="lCE-jK-uC1" firstAttribute="leading" secondItem="Yo4-in-W3F" secondAttribute="leading" id="vhw-pm-jop"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Setujui Pencairan" largeTitleDisplayMode="never" id="4pm-an-0SB"/>
+                    <connections>
+                        <outlet property="propertyView" destination="lCE-jK-uC1" id="8k1-Nu-mFM"/>
+                        <outlet property="qrScannerView" destination="n9m-Od-zIT" id="1EK-CG-FfA"/>
+                        <segue destination="6D2-SZ-abl" kind="unwind" identifier="unwindFromSetujui" unwindAction="unwind:" id="2bu-Ne-hrK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ghu-JE-RmE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="6D2-SZ-abl" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="878" y="-137"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

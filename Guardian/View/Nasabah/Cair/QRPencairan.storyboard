@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="oaN-W1-RjU">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="acN-j2-D2t">
+            <objects>
+                <navigationController id="oaN-W1-RjU" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="DhP-2p-Nei">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="Xyh-bh-Or9" kind="relationship" relationship="rootViewController" id="3KR-gp-oal"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JOc-NO-epB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-745" y="113"/>
+        </scene>
+        <!--Pencairan Saldo-->
+        <scene sceneID="NyI-Kp-O1n">
+            <objects>
+                <viewController storyboardIdentifier="QRPencairan" modalPresentationStyle="fullScreen" id="Xyh-bh-Or9" customClass="QRPencairan" customModule="Guardian" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XbH-7S-wTI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vTS-uf-Sca">
+                                <rect key="frame" x="50" y="167" width="314" height="318"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zna-su-G8G">
+                                        <rect key="frame" x="-17" y="-18" width="348" height="354"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="zna-su-G8G" firstAttribute="centerX" secondItem="vTS-uf-Sca" secondAttribute="centerX" id="2Gz-Mc-EWy"/>
+                                    <constraint firstItem="zna-su-G8G" firstAttribute="top" secondItem="vTS-uf-Sca" secondAttribute="top" constant="-18" id="V1E-Tn-ugj"/>
+                                    <constraint firstItem="zna-su-G8G" firstAttribute="centerY" secondItem="vTS-uf-Sca" secondAttribute="centerY" id="hYw-Gr-qiO"/>
+                                    <constraint firstItem="zna-su-G8G" firstAttribute="leading" secondItem="vTS-uf-Sca" secondAttribute="leading" constant="-17" id="rTm-ac-k1x"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tunjukkan kode QR ini pada admin Bank Sampah untuk dicairkan" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tnD-2G-3mB">
+                                <rect key="frame" x="35" y="521" width="344" height="67"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="Abu"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FnU-HF-Jrl">
+                                <rect key="frame" x="35" y="635" width="344" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.95148974659999996" green="0.52584135529999998" blue="0.16056287289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Simpan QR">
+                                    <color key="titleColor" red="0.97254914049999996" green="0.97254914049999996" blue="0.97254902119999997" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.CornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="simpanBtn:" destination="Xyh-bh-Or9" eventType="touchUpInside" id="RN9-Ch-h0J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p9L-z2-DZS">
+                                <rect key="frame" x="131" y="697" width="153" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Kembali ke Dashboard">
+                                    <color key="titleColor" red="0.95148974659999996" green="0.52584135529999998" blue="0.16056287289999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToATapped:" destination="Xyh-bh-Or9" eventType="touchUpInside" id="unj-9D-lqd"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="bXm-2c-nMD"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bXm-2c-nMD" firstAttribute="bottom" secondItem="vTS-uf-Sca" secondAttribute="bottom" constant="377" id="BFh-Dr-Xv6"/>
+                            <constraint firstItem="tnD-2G-3mB" firstAttribute="leading" secondItem="bXm-2c-nMD" secondAttribute="leading" constant="35" id="Fph-Ls-BUP"/>
+                            <constraint firstItem="bXm-2c-nMD" firstAttribute="bottom" secondItem="tnD-2G-3mB" secondAttribute="bottom" constant="274" id="OdN-o9-Cqi"/>
+                            <constraint firstItem="vTS-uf-Sca" firstAttribute="leading" secondItem="bXm-2c-nMD" secondAttribute="leading" constant="50" id="XIq-Qw-BdQ"/>
+                            <constraint firstItem="vTS-uf-Sca" firstAttribute="centerX" secondItem="XbH-7S-wTI" secondAttribute="centerX" id="bNy-H2-l0Y"/>
+                            <constraint firstItem="tnD-2G-3mB" firstAttribute="top" secondItem="vTS-uf-Sca" secondAttribute="bottom" constant="36" id="pzX-OL-Z4R"/>
+                            <constraint firstItem="tnD-2G-3mB" firstAttribute="centerX" secondItem="vTS-uf-Sca" secondAttribute="centerX" id="shV-nU-rwd"/>
+                            <constraint firstItem="vTS-uf-Sca" firstAttribute="top" secondItem="bXm-2c-nMD" secondAttribute="top" constant="79" id="wNH-An-2qv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Pencairan Saldo" largeTitleDisplayMode="never" id="4te-gF-9S9"/>
+                    <connections>
+                        <outlet property="imgQRImage" destination="zna-su-G8G" id="Sy0-t4-vlJ"/>
+                        <segue destination="9uV-Im-mrh" kind="unwind" identifier="unwindToA" unwindAction="unwind:" id="j1I-P0-7wa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lve-um-dAE" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="9uV-Im-mrh" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="86.956521739130437" y="112.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="Abu">
+            <color red="0.56499999761581421" green="0.56499999761581421" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

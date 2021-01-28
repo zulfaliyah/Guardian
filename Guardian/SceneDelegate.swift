@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                 let level = UserDefaults.standard.integer(forKey: "userLevel")
                 if level == 0 {
                     vc = AdminMainStoryboard.instantiateInitialViewController()!
-                } else if level == 2 {
+                } else if level == 1 {
                     vc = NasabahMainStoryboard.instantiateInitialViewController()!
                 }
             } else {
@@ -34,6 +34,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window?.rootViewController = vc
     }
 
+    func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard let window = self.window else {
+            return
+        }
+        
+        // change the root view controller to your specific view controller
+        window.rootViewController = vc
+    }
+    
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.
         // This occurs shortly after the scene enters the background, or when its session is discarded.

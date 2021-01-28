@@ -19,4 +19,9 @@ class RiwayatItemTableViewCell: UITableViewCell {
         // Initialization code
     }
     
+//    override func prepareForReuse() {
+//        super.prepareForReuse()
+////        reset()
+//    }
+    
 }

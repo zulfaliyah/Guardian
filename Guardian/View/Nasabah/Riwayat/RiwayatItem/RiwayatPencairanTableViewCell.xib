@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cairCell" rowHeight="80" id="iXK-Ju-hiG" customClass="RiwayatPencairanTableViewCell" customModule="Guardian" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="335" height="80"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="iXK-Ju-hiG" id="8Xg-23-lAf">
+                <rect key="frame" x="0.0" y="0.0" width="335" height="80"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="setor" translatesAutoresizingMaskIntoConstraints="NO" id="kjt-5l-mCh">
+                        <rect key="frame" x="5" y="15.5" width="48" height="49"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="49" id="bkx-ps-zuA"/>
+                            <constraint firstAttribute="width" constant="48" id="qLD-7I-jrI"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="+ 1000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fv1-oH-E2U">
+                        <rect key="frame" x="178" y="30" width="151" height="20"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <color key="textColor" name="Hijau Muda"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="30 Maret 2020" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yx2-Xw-2kj">
+                        <rect key="frame" x="61" y="29" width="114" height="23"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" name="Abu"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="kjt-5l-mCh" firstAttribute="top" secondItem="8Xg-23-lAf" secondAttribute="top" constant="15.5" id="2Gy-jZ-RqD"/>
+                    <constraint firstAttribute="trailing" secondItem="Fv1-oH-E2U" secondAttribute="trailing" constant="6" id="5ku-QY-KBI"/>
+                    <constraint firstItem="kjt-5l-mCh" firstAttribute="leading" secondItem="8Xg-23-lAf" secondAttribute="leading" constant="5" id="8Ep-pT-vmx"/>
+                    <constraint firstAttribute="bottom" secondItem="kjt-5l-mCh" secondAttribute="bottom" constant="15.5" id="92T-Xx-va0"/>
+                    <constraint firstItem="Yx2-Xw-2kj" firstAttribute="top" secondItem="8Xg-23-lAf" secondAttribute="top" constant="29" id="OzB-Dn-R0I"/>
+                    <constraint firstItem="Yx2-Xw-2kj" firstAttribute="leading" secondItem="kjt-5l-mCh" secondAttribute="trailing" constant="8" id="PWe-hE-474"/>
+                    <constraint firstItem="Fv1-oH-E2U" firstAttribute="top" secondItem="8Xg-23-lAf" secondAttribute="top" constant="30" id="QyP-nF-fVr"/>
+                    <constraint firstItem="Fv1-oH-E2U" firstAttribute="leading" secondItem="8Xg-23-lAf" secondAttribute="leading" constant="178" id="RJb-em-FmZ"/>
+                    <constraint firstAttribute="bottom" secondItem="Fv1-oH-E2U" secondAttribute="bottom" constant="30" id="Sm9-k7-hJx"/>
+                    <constraint firstItem="Fv1-oH-E2U" firstAttribute="leading" secondItem="Yx2-Xw-2kj" secondAttribute="trailing" constant="3" id="XVz-9g-zh4"/>
+                    <constraint firstItem="Fv1-oH-E2U" firstAttribute="leading" secondItem="Yx2-Xw-2kj" secondAttribute="trailing" constant="3" id="fPZ-vN-ll9"/>
+                    <constraint firstAttribute="bottom" secondItem="Yx2-Xw-2kj" secondAttribute="bottom" constant="28" id="zR8-kb-7mK"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="b8U-gg-YpU"/>
+            <connections>
+                <outlet property="tanggalLabelCair" destination="Yx2-Xw-2kj" id="RaG-Yz-0pH"/>
+                <outlet property="uangImgCair" destination="kjt-5l-mCh" id="l2J-f3-ykX"/>
+                <outlet property="uangLabelCair" destination="Fv1-oH-E2U" id="IH9-Mh-6A7"/>
+            </connections>
+            <point key="canvasLocation" x="26.811594202898554" y="99.107142857142847"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="setor" width="48" height="49"/>
+        <namedColor name="Abu">
+            <color red="0.56499999761581421" green="0.56499999761581421" blue="0.56499999761581421" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <namedColor name="Hijau Muda">
+            <color red="0.50999999046325684" green="0.63200002908706665" blue="0.60399997234344482" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+    </resources>
+</document>

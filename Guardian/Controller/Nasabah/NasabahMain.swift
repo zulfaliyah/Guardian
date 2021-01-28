@@ -6,28 +6,53 @@
 //
 
 import UIKit
+import Alamofire
 
 class NasabahMain: UIViewController {
     @IBOutlet weak var cardImg: UIImageView!
     @IBOutlet weak var cairBtn: UIButton!
     @IBOutlet weak var setorBtn: UIView!
-    @IBAction func cairBtn(_ sender: Any) {
-        
+    @IBOutlet weak var saldoLabel: UILabel!
+    @IBOutlet weak var namaLabel: UILabel!
+    @IBOutlet weak var nomorLabel: UILabel!
+    
+    var berhasilVC = BerhasilViewController()
+    
+    @IBAction func cairBtn(_ sender: UIButton) {
+        let storyboard = UIStoryboard(name: "Nominal", bundle: nil)
+        let controller = (storyboard.instantiateViewController(withIdentifier: "NominalViewController")) as! NominalViewController
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    @IBAction func unwind( _ seg: UIStoryboardSegue) {
     }
     
     private let imageView = UIImageView(image: UIImage(named: "account"))
     
     override func viewWillAppear(_ animated: Bool) {
+        
         super.viewWillAppear(true)
-        print("viewWillLoad - Table View")
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.largeTitleDisplayMode = .always
-        self.navigationController?.isNavigationBarHidden = false
+        title = "Dashboard"
+        
+        setupUI()
+        nasabahData()
+//        setupSetorDetail()
+    }
+    
+    private func nasabahData() {
+        API().profil{(error: Error?, nasabahProfileData: NasabahProfile?) in
+            if let nasabahProfileData = nasabahProfileData {
+                self.nomorLabel.text = nasabahProfileData.nomor
+                self.saldoLabel.text = "Rp " + nasabahProfileData.saldo
+                self.namaLabel.text = nasabahProfileData.nama
+                //print(nasabahProfileData.userID)
+            }
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupUI()
+        
         
         //cardImg
         cardImg.layer.shadowColor = UIColor.black.cgColor
@@ -44,11 +69,21 @@ class NasabahMain: UIViewController {
         setorBtn.layer.shadowOffset = CGSize(width: 0.0, height: 1.0)
         setorBtn.layer.shadowRadius = 10
         setorBtn.layer.shadowOpacity = 0.1
-        setorBtn.layer.masksToBounds = false
         
+        setorBtn.isUserInteractionEnabled = true
+        let setorTap = UITapGestureRecognizer(target: self, action: #selector(setorTapped))
+        setorBtn.addGestureRecognizer(setorTap)
         //card
-        //setupResponsive()
+        setupResponsive()
         setupCard()
+        
+        print("main screen")
+    }
+
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        imageView.constraints.forEach { $0.isActive = false }
+        imageView.removeFromSuperview()
     }
     
     private struct Const {
@@ -63,19 +98,28 @@ class NasabahMain: UIViewController {
     }
 
     private func setupUI() {
+        
+        print("asd")
         navigationController?.navigationBar.prefersLargeTitles = true
         guard let navigationBar = self.navigationController?.navigationBar else { return }
-        navigationBar.addSubview(imageView)
+        navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.isNavigationBarHidden = false
+        self.navigationItem.title = "Dashboard"
+        DispatchQueue.main.async { [weak self] in
+            self?.navigationController?.navigationBar.sizeToFit()
+        }
         
+        navigationBar.addSubview(imageView)
+
         //tap
         imageView.isUserInteractionEnabled = true
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(imageTapped))
         imageView.addGestureRecognizer(tapRecognizer)
-        
+
         imageView.clipsToBounds = true
         imageView.translatesAutoresizingMaskIntoConstraints = false
 
-        
+
         NSLayoutConstraint.activate([
             imageView.rightAnchor.constraint(equalTo: navigationBar.rightAnchor, constant: -Const.ImageRightMargin),
             imageView.bottomAnchor.constraint(equalTo: navigationBar.bottomAnchor, constant: -Const.ImageBottomMarginForLargeState),
@@ -90,24 +134,31 @@ class NasabahMain: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.imageView.alpha = 1.0
         }
+        alertLogout(message: "Yakin ingin keluar?", title: "Keluar")
         //API().move(name: "AdminMain", identifier: "AdminMain")
     }
-
-    @IBAction func setorTapped(_ sender: Any) {
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    @objc func setorTapped (recognizer: UITapGestureRecognizer) {
         print ("view tapped")
-        setorBtn.alpha = 0.75
-        UIView.animate(withDuration: 0.5) {
-            self.setorBtn.alpha = 1.0
-        }
-        API().move(name: "NasabahMain", identifier: "SetorScan")
-    }
+        print(appDelegate.machine_id)
+                setorBtn.alpha = 0.75
+                UIView.animate(withDuration: 0.5) {
+                    self.setorBtn.alpha = 1.0
+                }
+        let storyboard = UIStoryboard(name: "SetorScan", bundle: nil)
+        let controller = (storyboard.instantiateViewController(withIdentifier: "SetorScanViewController")) as! SetorScanViewController
+        self.navigationController?.pushViewController(controller, animated: true)
 
+    }
+    
     
     //Riwayat
     enum CardState {
         case expanded
         case collapsed
     }
+    
     
     var riwayatViewController: RiwayatViewController!
     var visualEffectView: UIVisualEffectView!
@@ -123,23 +174,23 @@ class NasabahMain: UIViewController {
     var runningAnimations = [UIViewPropertyAnimator]()
     var animationProgressWhenInterrupted: CGFloat = 0
     
-//    func setupResponsive() {
-//        let screenHeight = self.view.frame.height
-//        if screenHeight >= 890 { // iPhone 11 Pro Max, iPhone 11 Pro, iPhone 12 Pro Max
-//        } else if screenHeight >= 810 { // iPhone 12 Mini, iPhone 12 Pro, iPhone 12
-//            cardHandleAreaHeight = 250
-//        } else if screenHeight >= 730 { // iPhone 8,7,6 Plus
-//            cardHandleAreaHeight = 250
-//        } else if screenHeight >= 660 { // iPhone 8,7,6, iPhone SE 2nd Gen
-//            cardHeight = 550
-//            cardHandleAreaHeight = 220
-//        }
-//    }
+    func setupResponsive() {
+        let screenHeight = self.view.frame.height
+        if screenHeight >= 890 { // iPhone 11 Pro Max, iPhone 11 Pro, iPhone 12 Pro Max
+        } else if screenHeight >= 810 { // iPhone 12 Mini, iPhone 12 Pro, iPhone 12
+            cardHandleAreaHeight = 250
+        } else if screenHeight >= 730 { // iPhone 8,7,6 Plus
+            cardHandleAreaHeight = 250
+        } else if screenHeight >= 660 { // iPhone 8,7,6, iPhone SE 2nd Gen
+            cardHeight = 550
+            cardHandleAreaHeight = 220
+        }
+    }
     
     func setupCard() {
-        visualEffectView = UIVisualEffectView()
-        visualEffectView.frame = self.view.frame
-        self.view.addSubview(visualEffectView)
+        //visualEffectView = UIVisualEffectView()
+        //visualEffectView.frame = self.view.frame
+        //self.view.addSubview(visualEffectView)
         
         riwayatViewController = RiwayatViewController(nibName:"RiwayatViewController", bundle:nil)
         self.addChild(riwayatViewController)
@@ -190,18 +241,18 @@ class NasabahMain: UIViewController {
             frameAnimator.startAnimation()
             runningAnimations.append(frameAnimator)
             
-            let blurAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
-                switch state {
-                case .expanded:
-                    self.visualEffectView.effect = UIBlurEffect(style: .dark)
-                case .collapsed:
-                    self.visualEffectView.effect = nil
-                }
-            }
+//            let blurAnimator = UIViewPropertyAnimator(duration: duration, dampingRatio: 1) {
+//                switch state {
+//                case .expanded:
+//                    self.visualEffectView.effect = UIBlurEffect(style: .dark)
+//                case .collapsed:
+//                    self.visualEffectView.effect = nil
+//                }
+//            }
             
-            blurAnimator.startAnimation()
-            runningAnimations.append(blurAnimator)
-            
+//            blurAnimator.startAnimation()
+//            runningAnimations.append(blurAnimator)
+//
         }
     }
     
@@ -214,17 +265,29 @@ class NasabahMain: UIViewController {
             animationProgressWhenInterrupted = animator.fractionComplete
         }
     }
-    
+
     func updateInteractiveTransition(fractionCompleted:CGFloat) {
         for animator in runningAnimations {
             animator.fractionComplete = fractionCompleted + animationProgressWhenInterrupted
         }
     }
-    
+
     func continueInteractiveTransition (){
         for animator in runningAnimations {
             animator.continueAnimation(withTimingParameters: nil, durationFactor: 0)
         }
     }
+    
+    //nominal
+    
+    var nominalHeight: CGFloat = 509
+    var nominalHandleAreaHeight: CGFloat = 400
+    
+//    func setupNominal() {
+//        nominalVC = NominalViewController(nibName:"NominalViewController", bundle:nil)
+//        self.view.addSubview(nominalVC.view)
+//        nominalVC.view.frame = CGRect(x: 0, y: self.view.frame.height - nominalHandleAreaHeight, width: self.view.bounds.width, height: nominalHeight)
+//        nominalVC.view.clipsToBounds = false
+//    }
 }
 
