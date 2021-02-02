@@ -77,8 +77,6 @@ class AdminMain: UIViewController {
         UIView.animate(withDuration: 0.5) {
             self.imageView.alpha = 1.0
         }
-        //alertLogout(message: "Yakin ingin keluar?", title: "Keluar")
-        //API().move(name: "AdminMain", identifier: "AdminMain")
         let storyboard = UIStoryboard(name: "DaftarNasabah", bundle: nil)
         let controller = (storyboard.instantiateViewController(withIdentifier: "DaftarNasabah")) as! DaftarNasabahViewController
         self.navigationController?.pushViewController(controller, animated: true)
@@ -94,9 +92,6 @@ class AdminMain: UIViewController {
         let storyboard = UIStoryboard(name: "SetujuiScan", bundle: nil)
         let controller = (storyboard.instantiateViewController(withIdentifier: "SetujuiPencairan")) as! SetujuiPencairanViewController
         self.navigationController?.pushViewController(controller, animated: true)
-        
-        //alertLogout(message: "Yakin ingin keluar?", title: "Keluar")
-        //API().move(name: "AdminMain", identifier: "AdminMain")
     }
     
     @objc func imageTapped(recognizer: UITapGestureRecognizer) {
@@ -106,7 +101,6 @@ class AdminMain: UIViewController {
             self.imageView.alpha = 1.0
         }
         alertLogout(message: "Yakin ingin keluar?", title: "Keluar")
-        //API().move(name: "AdminMain", identifier: "AdminMain")
     }
     
     
